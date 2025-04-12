@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "cat_order_status", schema = "sales", 
 	   uniqueConstraints = @UniqueConstraint(name = "un_cat_order_status", columnNames = "ost_name"))
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class CatOrderStatus {

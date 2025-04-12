@@ -27,10 +27,10 @@ public enum OrderStatusEnum {
 	@JsonCreator
 	public static OrderStatusEnum fromValue(Object value) {
 		return switch (value) {
-		    case Integer intValue -> Arrays.stream(OrderStatusEnum.values())
-				.filter(status -> status.getStatus() == intValue)
+		    case Number number -> Arrays.stream(OrderStatusEnum.values())
+				.filter(status -> status.getStatus() == number.intValue())
 				.findFirst()
-				.orElseThrow(() -> new IllegalArgumentException("Unknown value: " + intValue));
+				.orElseThrow(() -> new IllegalArgumentException("Unknown value: " + number.intValue()));
 		    case String strValue -> Arrays.stream(OrderStatusEnum.values())
 				.filter(status -> status.getTag().equalsIgnoreCase(strValue))
 				.findFirst()

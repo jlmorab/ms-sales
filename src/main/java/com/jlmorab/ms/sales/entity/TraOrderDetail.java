@@ -12,6 +12,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,7 @@ import lombok.ToString;
 @Table(name = "tra_order_detail", schema = "sales", 
 	   uniqueConstraints = @UniqueConstraint(name = "un_tra_order_detail_definition", columnNames = { "ord_id", "prod_id" }))
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class TraOrderDetail {

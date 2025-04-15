@@ -46,7 +46,7 @@ public class SalesServiceImpl extends ServiceAbstract implements ISalesService {
 	
 	@Override
 	public WebResponseDTO getOrderById( HttpServletResponse response, int id ) {
-		return executeFlow( response, log, () -> orderRepository.findById( id ) );
+		return executeFlow( response, log, () -> orderRepository.findById( id ).orElse(null) );
 	}//end getOrderById()
 	
 	@Override

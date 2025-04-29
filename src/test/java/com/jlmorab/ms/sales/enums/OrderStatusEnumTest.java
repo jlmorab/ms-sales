@@ -1,8 +1,15 @@
 package com.jlmorab.ms.sales.enums;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 class OrderStatusEnumTest {
 
@@ -26,23 +33,21 @@ class OrderStatusEnumTest {
 		assertEquals( expected, actual );
 	}//end fromValue_whenValueIsStrig()
 	
-	@Test
-	void fromValue_whenValueIsUnknown() {
-		assertThrows( IllegalArgumentException.class, () -> {
-			OrderStatusEnum.fromValue( -1 );
-		} );
-		
-		assertThrows( IllegalArgumentException.class, () -> {
-			OrderStatusEnum.fromValue( "unknown" );
-		} );
-		
-		assertThrows( IllegalArgumentException.class, () -> {
-			OrderStatusEnum.fromValue( new Object() );
-		} );
-		
-		assertThrows( NullPointerException.class, () -> {
-			OrderStatusEnum.fromValue( null );
-		} );
+	@ParameterizedTest
+	@MethodSource("unknownValueProvider")
+	void fromValue_whenValueIsUnknown( Exception exception, Object value ) {
+		assertThrows( exception.getClass(), () -> {
+			OrderStatusEnum.fromValue( value );
+		} ); 
 	}//end fromValue_whenValueIsUnknown()
+	
+	static Stream<Arguments> unknownValueProvider() {
+		return Stream.of(
+			Arguments.of( new IllegalArgumentException(), -1 ),
+			Arguments.of( new IllegalArgumentException(), "unknown" ),
+			Arguments.of( new IllegalArgumentException(), new Object() ),
+			Arguments.of( new NullPointerException(), null )
+		);
+	}//end unknownValueProvider()
 
 }

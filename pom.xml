@@ -82,6 +82,9 @@
 		<dependency>
 			<groupId>com.jlmorab.ms</groupId>
 			<artifactId>ms-test-tools</artifactId>
+			<version>0.4.0</version>
+			<scope>test</scope>
+		</dependency>
 			<version>0.3.0</version>
 			<scope>test</scope>
 		</dependency>

@@ -50,6 +50,18 @@
 			<artifactId>ms-common-tools</artifactId>
 			<version>0.2.0</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.jlmorab.ms</groupId>
+			<artifactId>ms-security-tools</artifactId>
+			<version>0.2.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.jlmorab.ms</groupId>
+			<artifactId>ms-documentation-tools</artifactId>
+			<version>0.1.1</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -83,9 +95,6 @@
 			<groupId>com.jlmorab.ms</groupId>
 			<artifactId>ms-test-tools</artifactId>
 			<version>0.4.0</version>
-			<scope>test</scope>
-		</dependency>
-			<version>0.3.0</version>
 			<scope>test</scope>
 		</dependency>
 

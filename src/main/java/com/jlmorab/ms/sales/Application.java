@@ -2,6 +2,9 @@ package com.jlmorab.ms.sales;
 
 import com.jlmorab.ms.SpringApplicationCommon;
 
+import lombok.experimental.UtilityClass;
+
+@UtilityClass
 public class Application {
 
 	private static SpringApplicationCommon springApplication = new SpringApplicationCommon();

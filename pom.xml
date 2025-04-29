@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.jlmorab.ms</groupId>
 		<artifactId>ms-parent</artifactId>
-		<version>0.2.0</version>
+		<version>0.2.2</version>
 	</parent>
 	
 	<artifactId>ms-sales</artifactId>
@@ -79,36 +79,22 @@
 			<optional>true</optional>
 		</dependency>
 		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
+		
 		<!-- Test Dependencies -->
 		
 		<dependency>
 			<groupId>com.jlmorab.ms</groupId>
 			<artifactId>ms-test-tools</artifactId>
-			<version>0.1.0</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-junit-jupiter</artifactId>
+			<version>0.4.0</version>
 			<scope>test</scope>
 		</dependency>
 
